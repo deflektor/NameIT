@@ -10,7 +10,7 @@ function State {
         $Culture = [cultureinfo]::CurrentCulture
     )
 
-    $states = Resolve-LocalizedPath -Culture $Culture -ContentFile 'states.csv' | Import-CacheableCsv -UseCulture -Culture $Culture
+    $states = Resolve-LocalizedPath -Culture $Culture -ContentFile 'states.csv' | Import-CacheableCsv -Delimiter ','
 
     switch ($property) {
         "name" {$property = "statename"}
